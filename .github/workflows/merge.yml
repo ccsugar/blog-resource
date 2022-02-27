@@ -1,4 +1,4 @@
-name: Merge Imgbot
+name: merge
 
 on:
   pull_request:
@@ -7,15 +7,15 @@ on:
       - ready_for_review
   pull_request_review:
     types:
-      - submitted
+      - submitted 
   status: {}
-
+  
 jobs:
   automerge:
     runs-on: ubuntu-latest
     steps:
       - name: automerge
-        uses: "pascalgn/automerge-action@v0.13.1"
+        uses: "pascalgn/automerge-action@v0.14.3"
         env:
           GITHUB_TOKEN: "${{ secrets.TEST }}"
           MERGE_LABELS: ""
